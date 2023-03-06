@@ -1,390 +1,385 @@
 @-moz-document domain("capytale2.ac-paris.fr") {
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;600&display=swap');
-
-    @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-
-
-    * {
-        font-family: 'Segoe UI', 'Noto Sans', sans-serif;
-        --main-color: #0075ff;
-        --main-color-light: #0075ff55;
-        --main-color-light2: #0075ff11;
-    }
-
-    .CodeMirror-lines * {
-        font-family: "Noto Sans Mono", monospace !important;
-    }
-
-    /* Page */
-
-    .cell {
-        border-radius: 3px !important;
-    }
-
-    .cell:hover {
-        border: 1px solid var(--main-color-light) !important;
-        background: var(--main-color-light2) !important;
-    }
-
-    .cell.selected {
-        border: 1px solid var(--main-color) !important;
-        outline: 2px solid var(--main-color-light) !important;
-    }
-
-    .cell.selected::before {
-        display: none !important;
-    }
-
-    #notebook-container, .capytale-header-block {
-        box-shadow: none;
-        border: 1px solid #88888855;
-        border-radius: 3px;
-    }
-
-    .capytale-minititle {
-        box-shadow: none;
-    }
-
-    /* menu */
-
-    #menubar-container {
-        width: 100%;
-    }
-
-    #maintoolbar {
-
-    }
-
-    #maintoolbar-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        gap: 5px;
-
-        width: 100%;
-        border-radius:0px;
-    }
-
-    #maintoolbar-container .btn {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #maintoolbar-container .btn-group {
-        display: flex;
-        flex-direction: row;
-    }
-
-    #maintoolbar-container .btn:hover {
-        background: #00000022;
-    }
-
-    #maintoolbar-container .btn:focus {
-        outline: none;
-    }
-
-    #maintoolbar-container .btn i {
-        visibility: hidden;
-        position: relative;
-
-        width: 24px;
-        height: 24px;
-
-        margin-top: 2px;
-    }
-
-    #maintoolbar-container .btn i:after {
-        visibility: visible;
-        position: absolute;
-        top: 0;
-        left: 0;
-
-        font-family: 'Material Icons' !important;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 24px;  /* Preferred icon size */
-        display: inline-block;
-        line-height: 1;
-        text-transform: none;
-        letter-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        direction: ltr;
-
-        /* Support for Safari and Chrome. */
-        text-rendering: optimizeLegibility !important;
-    }
-
-    /* icons */
-
-    #capytale-save i:after {
-        content: 'save';
-    }
-
-    #capytale-save:after {
-        content: 'Enregistrer';
-    }
-
-    #capytale-attached-files-list button i:after {
-        content: 'link';
-    }
-
-    #capytale-attached-files-list button:after {
-        content: 'Annexes';
-    }
-
-    #rollback button i:after {
-        content: 'undo';
-    }
-
-    #rollback button:after {
-        content: 'Restaurer';
-    }
-
-    #insert_above_below button i:after {
-        content: 'add';
-    }
-
-    #insert_above_below button:after {
-        content: 'Insérer';
-    }
-
-    #cut_copy_paste button:nth-child(1) i:after {
-        content: 'content_cut';
-    }
-
-    #cut_copy_paste button:nth-child(1):after {
-        content: 'Couper';
-    }
-
-    #cut_copy_paste button:nth-child(2) i:after {
-        content: 'content_copy';
-    }
-
-    #cut_copy_paste button:nth-child(2):after {
-        content: 'Copier';
-    }
-
-    #cut_copy_paste button:nth-child(3) i:after {
-        content: 'content_paste';
-    }
-
-    #cut_copy_paste button:nth-child(3):after {
-        content: 'Coller';
-    }
-
-    #move_up_down button:nth-child(1) i:after {
-        content: 'arrow_upward';
-    }
-
-    #move_up_down button:nth-child(1):after {
-        content: 'Monter';
-    }
-
-    #move_up_down button:nth-child(2) i:after {
-        content: 'arrow_downward';
-    }
-
-    #move_up_down button:nth-child(2):after {
-        content: 'Descendre';
-    }
-
-    #run_int button:nth-child(1) i:after {
-        content: 'play_circle_filled';
-    }
-
-    #run_int button:nth-child(1) span {
-        display: none;
-    }
-
-    #run_int button:nth-child(1):after {
-        content: 'Éxecuter';
-    }
-
-    #run_int button:nth-child(2) i:after {
-        content: 'stop';
-    }
-
-    #run_int button:nth-child(2):after {
-        content: 'Arrêter';
-    }
-
-    #run_int button:nth-child(3) i:after {
-        content: 'refresh';
-    }
-
-    #run_int button:nth-child(3):after {
-        content: 'Rafraîchir';
-    }
-
-    #run_int button:nth-child(4) i:after {
-        content: 'skip_next';
-    }
-
-    #run_int button:nth-child(4):after {
-        content: 'Redémarrer';
-    }
-
-    #cmd_palette button i:after {
-        content: 'integration_instructions';
-    }
-
-    #cmd_palette button:after {
-        content: 'Palette de cmds.';
-    }
-
-    #switch-theme button i:after {
-        content: 'dark_mode';
-    }
-
-    #switch-theme button:after {
-        content: 'Mode sombre';
-    }
-
-    #RISE i:after {
-        content: 'query_stats';
-    }
-
-
-    #RISE:after {
-        content: 'Présentation';
-    }
-
-    /* Ruban */
-
-    :root {
-        --main-base-color: #125ac7;
-    }
-
-    #header-container {
-        width: 100%;
-        background: var(--main-base-color);
-    }
-
-    #save_widget {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 0;
-    }
-
-    #ipython_notebook, #kernel_logo_widget, #login_widget {
-        display: none;
-
-    }
-
-    #save_widget {
-        max-width: 100% !important;
-    }
-
-    #capytale-title {
-        color: #fff;
-        font-weight: 400;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100% !important;
-    }
-
-    #capytale-title:after {
-        content: "  –  Document Capytale";
-        opacity: 50%;
-    }
-
-    #menubar {
-        padding: 0;
-        margin: 0;
-
-        margin-left: -1px;
-        width: calc(100% + 2px);
-    }
-
-    #menubar #menus {
-        background: var(--main-base-color) !important;
-        padding: 0;
-        margin: 0;
-    }
-
-    #kernel_indicator {
-        display: none;
-    }
-
-    #menus .container-fluid {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .navbar-collapse {
-        width: 100%;
-        max-width: 1170px;
-
-        display: flex;
-        align-items: flex-start;
-        justify-content: center;
-    }
-
-    #menus .dropdown .dropdown-toggle {
-        color: #fff;
-        background: none !important; 
-        padding: 6px 15px;
-    }
-
-    #menus .dropdown .dropdown-toggle:hover {
-        background: #ffffff22 !important; 
-    }
-
-    #capytale-main-menu {
-        background: var(--body-bg) !important;
-        color: var(--main-base-color) !important;
-    }
-
-    #capytale-main-menu:hover {
-        background: #f0f0f0 !important;
-    }
-
-    #capytale-main-menu a * {
-        color: var(--main-base-color) !important;
-        font-weight: 500;
-    }
-
-    #capytale-main-menu a b:after {
-        content: "Plus";
-
-        color: var(--main-base-color);
-        background: #0066ff22;
-        padding: 2px 6px;
-        border-radius: 5px;
-        margin-left: 5px;
-    }
-
-    .capytale-save-eye-catcher {
-        box-shadow: none !important;
-        border-color: #0075ff;
-        animation: eye-catcher 1s infinite !important;
-    }
-
-    @keyframes eye-catcher {
-        50% {
-            outline: 0px solid #0077ffbb;
-        }
-        100% {
-            outline: 5px solid #0077ff00;
-        }
-    }
-
-    .notebook_app > #header {
-        box-shadow: 
-            0px 1px 2px #00000022,
-            0px 2px 4px #00000011
-        ;
-    }
-
-    #menus {
-        border: none !important;
-    }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;600&display=swap');
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+
+* {
+    font-family: 'Segoe UI', 'Noto Sans', sans-serif;
+    --main-color: #0075ff;
+    --main-color-light: #0075ff55;
+    --main-color-light2: #0075ff11;
+}
+
+.CodeMirror-lines * {
+    font-family: "Noto Sans Mono", monospace !important;
+}
+
+/* Page */
+.cell {
+    border-radius: 3px !important;
+}
+
+.cell:hover {
+    border: 1px solid var(--main-color-light) !important;
+    background: var(--main-color-light2) !important;
+}
+
+.cell.selected {
+    border: 1px solid var(--main-color) !important;
+    outline: 2px solid var(--main-color-light) !important;
+}
+
+.cell.selected::before {
+    display: none !important;
+}
+
+#notebook-container,
+.capytale-header-block {
+    box-shadow: none;
+    border: 1px solid #88888855;
+    border-radius: 3px;
+}
+
+.capytale-minititle {
+    box-shadow: none;
+}
+
+/* menu */
+#menubar-container {
+    width: 100%;
+}
+
+#maintoolbar {}
+
+#maintoolbar-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    width: 100%;
+    border-radius: 0px;
+}
+
+#maintoolbar-container .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#maintoolbar-container .btn-group {
+    display: flex;
+    flex-direction: row;
+}
+
+#maintoolbar-container .btn:hover {
+    background: #00000022;
+}
+
+#maintoolbar-container .btn:focus {
+    outline: none;
+}
+
+#maintoolbar-container .btn i {
+    visibility: hidden;
+    position: relative;
+
+    width: 24px;
+    height: 24px;
+
+    margin-top: 2px;
+}
+
+#maintoolbar-container .btn i:after {
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    font-family: 'Material Icons' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility !important;
+}
+
+/* icons */
+#capytale-save i:after {
+    content: 'save';
+}
+
+#capytale-save:after {
+    content: 'Enregistrer';
+}
+
+#capytale-attached-files-list button i:after {
+    content: 'link';
+}
+
+#capytale-attached-files-list button:after {
+    content: 'Annexes';
+}
+
+#rollback button i:after {
+    content: 'undo';
+}
+
+#rollback button:after {
+    content: 'Restaurer';
+}
+
+#insert_above_below button i:after {
+    content: 'add';
+}
+
+#insert_above_below button:after {
+    content: 'Insérer';
+}
+
+#cut_copy_paste button:nth-child(1) i:after {
+    content: 'content_cut';
+}
+
+#cut_copy_paste button:nth-child(1):after {
+    content: 'Couper';
+}
+
+#cut_copy_paste button:nth-child(2) i:after {
+    content: 'content_copy';
+}
+
+#cut_copy_paste button:nth-child(2):after {
+    content: 'Copier';
+}
+
+#cut_copy_paste button:nth-child(3) i:after {
+    content: 'content_paste';
+}
+
+#cut_copy_paste button:nth-child(3):after {
+    content: 'Coller';
+}
+
+#move_up_down button:nth-child(1) i:after {
+    content: 'arrow_upward';
+}
+
+#move_up_down button:nth-child(1):after {
+    content: 'Monter';
+}
+
+#move_up_down button:nth-child(2) i:after {
+    content: 'arrow_downward';
+}
+
+#move_up_down button:nth-child(2):after {
+    content: 'Descendre';
+}
+
+#run_int button:nth-child(1) i:after {
+    content: 'play_circle_filled';
+}
+
+#run_int button:nth-child(1) span {
+    display: none;
+}
+
+#run_int button:nth-child(1):after {
+    content: 'Éxecuter';
+}
+
+#run_int button:nth-child(2) i:after {
+    content: 'stop';
+}
+
+#run_int button:nth-child(2):after {
+    content: 'Arrêter';
+}
+
+#run_int button:nth-child(3) i:after {
+    content: 'refresh';
+}
+
+#run_int button:nth-child(3):after {
+    content: 'Rafraîchir';
+}
+
+#run_int button:nth-child(4) i:after {
+    content: 'skip_next';
+}
+
+#run_int button:nth-child(4):after {
+    content: 'Redémarrer';
+}
+
+#cmd_palette button i:after {
+    content: 'integration_instructions';
+}
+
+#cmd_palette button:after {
+    content: 'Palette de cmds.';
+}
+
+#switch-theme button i:after {
+    content: 'dark_mode';
+}
+
+#switch-theme button:after {
+    content: 'Mode sombre';
+}
+
+#RISE i:after {
+    content: 'query_stats';
+}
+
+
+#RISE:after {
+    content: 'Présentation';
+}
+
+/* Ruban */
+:root {
+    --main-base-color: #125ac7;
+}
+
+#header-container {
+    width: 100%;
+    background: var(--main-base-color);
+}
+
+#save_widget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+#ipython_notebook,
+#kernel_logo_widget,
+#login_widget {
+    display: none;
+}
+
+#save_widget {
+    max-width: 100% !important;
+}
+
+#capytale-title {
+    color: #fff;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100% !important;
+}
+
+#capytale-title:after {
+    content: "  –  Document Capytale";
+    opacity: 50%;
+}
+
+#menubar {
+    padding: 0;
+    margin: 0;
+
+    margin-left: -1px;
+    width: calc(100% + 2px);
+}
+
+#menubar #menus {
+    background: var(--main-base-color) !important;
+    padding: 0;
+    margin: 0;
+}
+
+#kernel_indicator {
+    display: none;
+}
+
+#menus .container-fluid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar-collapse {
+    width: 100%;
+    max-width: 1170px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#menus .dropdown .dropdown-toggle {
+    color: #fff;
+    background: none !important;
+    padding: 6px 15px;
+}
+
+#menus .dropdown .dropdown-toggle:hover {
+    background: #ffffff22 !important;
+}
+
+#capytale-main-menu {
+    background: var(--body-bg) !important;
+    color: var(--main-base-color) !important;
+}
+
+#capytale-main-menu:hover {
+    background: #f0f0f0 !important;
+}
+
+#capytale-main-menu a * {
+    color: var(--main-base-color) !important;
+    font-weight: 500;
+}
+
+#capytale-main-menu a b:after {
+    content: "Plus";
+
+    color: var(--main-base-color);
+    background: #0066ff22;
+    padding: 2px 6px;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+
+.capytale-save-eye-catcher {
+    box-shadow: none !important;
+    border-color: #0075ff;
+    animation: eye-catcher 1s infinite !important;
+}
+
+@keyframes eye-catcher {
+    50% {
+        outline: 0px solid #0077ffbb;
+    }
+    100% {
+        outline: 5px solid #0077ff00;
+    }
+}
+
+.notebook_app > #header {
+    box-shadow: 0px 1px 2px #00000022,
+    0px 2px 4px #00000011;
+}
+
+#menus {
+    border: none !important;
+}
 }
