@@ -1,11 +1,12 @@
 @-moz-document domain("capytale2.ac-paris.fr") {
-@import url('https://fonts.googleapis.com/css2?family=Asap:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;500;700&display=swap');
 
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 
 * {
-    font-family: 'Asap', sans-serif;
+    font-family: 'Rubik', sans-serif;
     --main-base-color: #125ac7;
     --main-color: #0075ff;
     --main-color-light: #0075ff55;
@@ -13,7 +14,7 @@
 }
 
 .CodeMirror-lines * {
-    font-family: monospace !important;
+    font-family: "Noto Sans Mono", monospace !important;
 }
 
 /* Page */
@@ -132,6 +133,11 @@ html[data-theme='darcula'] #maintoolbar-container .btn:hover {
 
 #maintoolbar-container select option {
     color: #000;
+}
+
+#maintoolbar-container .btn:after {
+    font-size: 13px;
+    margin-top: 1px;
 }
 
 #maintoolbar-container .btn i:after {
