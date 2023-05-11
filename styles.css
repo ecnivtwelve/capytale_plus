@@ -336,7 +336,7 @@ html[data-theme='darcula'] #maintoolbar-container .btn:hover {
 }
 
 #capytale-title:after {
-    content: "  –  Document Capytale";
+    content: "  –  Document Capytale";
     opacity: 50%;
 }
 
@@ -442,23 +442,5 @@ html[data-theme='darcula'] #capytale-main-menu a b:after {
 
 #menus {
     border: none !important;
-}
-
-/* dans le doc */
-div [style*="background-color: #66bb66 ;"] {
-    background-color: var(--main-base-color) !important;
-    color: #fff !important;
-    border: none !important;
-    border-radius: 5px !important;
-    font-weight: 500 !important;
-}
-
-div [style*="text-align: center ; padding: 5px ;"],
-div [style*="padding: 5px ; background-color: #bb6666 ;"] {
-    background-color: #0066ff22 !important;
-    color: #0066ff !important;
-    border: none !important;
-    border-radius: 5px !important;
-    font-weight: 500 !important;
 }
 }
