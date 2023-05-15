@@ -13,11 +13,6 @@
     --main-color-light: #0075ff55;
     --main-color-light2: #0075ff11;
 }
-
-#header * {
-    font-family: 'Segoe UI', sans-serif;
-}
-
 .CodeMirror-lines * {
     font-family: "Noto Sans Mono", monospace !important;
 }
@@ -64,10 +59,21 @@
     align-items: center;
     justify-content: center;
 
-    gap: 5px;
+    gap: 10px;
 
     width: 100%;
     border-radius: 0px;
+    
+    margin: 0 !important;
+}
+
+.container:before {
+    display: none !important;
+}
+
+#maintoolbar {
+    margin: 5px 0px !important;
+    padding: 0 !important;
 }
 
 #maintoolbar-container .btn {
@@ -81,7 +87,9 @@
     flex-direction: row;
 
     border: 1px solid #00000020;
-    border-radius: 4px;
+    border-radius: 3px;
+    
+    margin: 0 !important;
 }
 
 html[data-theme='darcula'] #maintoolbar-container .btn-group {
@@ -98,7 +106,10 @@ html[data-theme='darcula'] #maintoolbar-container .btn-group .btn {
 }
 
 #maintoolbar-container .btn:hover {
-    background: #00000022;
+    background: #00000012;
+    transition: background 0.1s;
+    
+    outline: 1px solid #00000020;
 }
 
 html[data-theme='darcula'] #maintoolbar-container .btn:hover {
@@ -113,27 +124,30 @@ html[data-theme='darcula'] #maintoolbar-container .btn:hover {
     visibility: hidden;
     position: relative;
 
-    width: 24px;
-    height: 24px;
+    width: 22px;
+    height: 22px;
 
     margin-top: 2px;
 }
 
 #maintoolbar-container select {
     border: 1px solid #ffffff30;
-    border-radius: 0px;
+    border-radius: 5px;
     box-shadow: none;
     display: flex;
     aligh-items: center;
 
     position: absolute;
-    right: calc((100vw - 1130px) / 2);
-    top: -20px;
+    right: calc((100vw - 1130px) / 2 + 3px);
+    top: -38px;
 
-    background: none;
+    background: #ffffff10;
     color: #fff;
+    
+    height: 26px;
 
-    padding-bottom: 2px;
+    padding-bottom: 4px;
+    padding-left: 4px;
 }
 
 #maintoolbar-container select option {
@@ -141,7 +155,7 @@ html[data-theme='darcula'] #maintoolbar-container .btn:hover {
 }
 
 #maintoolbar-container .btn:after {
-    font-size: 13px;
+    font-size: 12.25px;
     margin-top: 1px;
 }
 
@@ -154,7 +168,7 @@ html[data-theme='darcula'] #maintoolbar-container .btn:hover {
     font-family: 'Material Icons' !important;
     font-weight: normal;
     font-style: normal;
-    font-size: 24px;
+    font-size: 22px;
     /* Preferred icon size */
     display: inline-block;
     line-height: 1;
@@ -336,7 +350,7 @@ html[data-theme='darcula'] #maintoolbar-container .btn:hover {
 }
 
 #capytale-title:after {
-    content: "  –  Document Capytale";
+    content: "  –  Document Capytale";
     opacity: 50%;
 }
 
@@ -386,6 +400,7 @@ html[data-theme='darcula'] #maintoolbar-container .btn:hover {
 #capytale-main-menu {
     background: var(--body-bg) !important;
     color: var(--main-base-color) !important;
+    
 }
 
 #capytale-main-menu:hover {
@@ -443,4 +458,143 @@ html[data-theme='darcula'] #capytale-main-menu a b:after {
 #menus {
     border: none !important;
 }
+
+/* Modals */
+.modal-backdrop {
+    display: none;
+    pointer-events: none;
+}
+
+.modal {
+    pointer-events: none;
+}
+
+.modal-dialog {
+    pointer-events: all;
+}
+
+.modal-dialog * {
+    all: unset;
+}
+
+.modal-dialog *:before {
+    all: unset;
+}
+
+.modal-dialog *:after {
+    all: unset;
+}
+
+.modal-dialog {
+    max-width: 500px;
+    width: 500px;
+    
+    position: absolute;
+    
+    top: 25px;
+    left: 0;
+    right: 0;
+    
+    margin: 0 auto;
+    
+    box-shadow: 0px 2px 10px #00000020;
+    border-radius: 5px;
+}
+
+
+.modal-content {
+    max-width: 500px;
+    
+    background: #fff;
+    box-shadow: 0px 1px 5px #00000040;
+    
+    border-radius: 5px;
+    
+    padding: 10px 15px;
+    
+    display: flex;
+    flex-direction: column;
+    
+    position: relative;
+}
+
+.modal-header button {
+    display: none;
+}
+
+.modal-header h4 {
+    font-weight: 500;
+    font-size: 14px;
+    max-width: calc(100% - 100px);
+}
+
+.modal-body div {
+    opacity: 0.5;
+    max-width: calc(100% - 100px);
+}
+
+.modal-footer {
+    margin-top: -5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+html[data-theme='ipython'] .modal-footer button {
+    padding: 2px 10px;
+    
+    background: var(--main-color-light2);
+    border: 1px solid var( --main-color-light);
+    color: var(--main-color);
+    
+    border-radius: 300px;
+}
+
+.modal-footer button:active, .modal-footer button:focus {
+    outline: none;
+    background: var(--main-color-light2);
+    border: 1px solid var( --main-color-light);
+    color: var(--main-color);
+}
+
+.modal-footer button:hover {
+    background: var(--main-color-light2) !important;
+    border: 1px solid var(--main-color) !important;
+    outline: 2px solid var( --main-color-light) !important;
+    color: var(--main-color) !important;
+    
+    cursor: pointer;
+}
+
+html[data-theme='darcula'] .modal-content {
+    background: #333;
+    color: #fff;
+}
+
+html[data-theme='darcula'] .modal-footer button {
+    padding: 2px 10px;
+    
+    background: #ffffff10;
+    border: 1px solid #ffffff30;
+    color: #ffffffff;
+    
+    border-radius: 300px;
+}
+
+html[data-theme='darcula'] .modal-footer button:active, .modal-footer button:focus {
+    outline: none;
+    background: #ffffff10;
+    border: 1px solid #ffffff30;
+    color: #ffffffff;
+}
+
+html[data-theme='darcula'] .modal-footer button:hover {
+    background: #ffffff10 !important;
+    border: 1px solid #ffffff30 !important;
+    color: #ffffffff !important;
+    outline: 2px solid #ffffff20 !important;
+    
+    cursor: pointer;
+}
+
+
 }
