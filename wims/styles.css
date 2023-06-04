@@ -1,0 +1,273 @@
+@-moz-document domain("wims.math.cnrs.fr") {
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;500;600&display=swap');
+
+:root {
+    --color: #13635d;
+    --font: 'Geologica', sans-serif;
+}
+
+/* Title */
+
+.wims_title {
+    text-align: left;
+    margin-top: 3px !important;
+}
+
+.wims_classes_direct_class {
+    font-family: var(--font);
+    border: none;
+    text-align: left;
+    padding: 0 !important;
+    margin-left: -1px;
+    font-weight: 600;
+}
+
+.wims_classname {
+    font-family: var(--font);
+    text-align: left;
+    
+    color: #00000050;
+    font-weight: 400;
+}
+
+.wims_greetings {
+    font-family: var(--font);
+    text-align: left;
+    
+    color: #000000;
+    font-weight: 400;
+    
+    margin-top: -5px !important;
+}
+
+#classlogo {
+    padding: 0;
+    margin-right: 20px;
+}
+
+#classlogo img {
+    border: 1px solid #00000020;
+    
+    width: 90px;
+    height: 90px;
+    
+    object-fit: cover;
+    
+    border-radius: 5px;
+}
+
+/* Banners */
+
+.wims_msg {
+    border: none;
+    background-color: #0099ff25 !important;
+    border-left: 2px solid #0099ff;
+    
+    padding: 8px 20px;
+    
+    font-family: var(--font);
+    font-weight: 300;
+}
+
+/* Motd */
+
+.wims_class_motd {
+    border: 1px solid #00000020;
+    
+    padding: 8px 12px;
+    margin: 0;
+    
+    margin-bottom: 16px;
+    border-radius: 5px;
+}
+
+.wims_class_motd p {
+    margin: 0;
+    font-family: var(--font);
+}
+
+/* Sequence : summary */
+
+#widget_sequence {
+    padding: 0;
+}
+
+.ui-widget-header {
+    background: none;
+    border: none;
+    
+    border-radius: 0;
+    border-bottom: 1px solid #00000050;
+    
+    display: flex;
+    width: calc(100% - 5px);
+    
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+.ui-widget-header::-webkit-scrollbar {
+    display: none;
+}
+
+.ui-tabs-tab {
+    border: none !important;
+    background: none !important;
+    
+    margin-right: 10px !important;
+    
+    border-bottom: 2px solid #00000000 !important;
+}
+
+.ui-tabs-tab a {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 15.7px;
+    
+    cursor: pointer !important;
+}
+
+.ui-tabs-active {
+    border-bottom: 3px solid var(--color) !important;
+}
+
+.ui-tabs-active a {
+    color: var(--color) !important;
+}
+
+/* Sequence : sequence */
+
+.wims_seq {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.wims_title_seq {
+    background: none;
+    color: var(--color) !important;
+    font-family: var(--font);
+    
+    padding: 10px 20px;
+    margin: 0;
+    
+    margin-top: 10px;
+    
+    border-bottom: 1px solid #00000000;
+}
+
+.wims_seq_id {
+    padding-right: 12px;
+    margin-right: 7px;
+    border-right: 1px solid #00000050;
+}
+
+.wims_title_item {
+    font-weight: 400;
+    color: #000;
+}
+
+.wims_comment_item {
+    padding: 0px 20px;
+    margin: 0;
+}
+
+.wims_comment_item p {
+    padding: 0;
+    margin: 0;
+    
+    font-family: var(--font);
+    font-weight: 400;
+    
+    color: #00000099;
+    
+    margin-bottom: 10px;
+}
+
+.wims_work_list {
+    padding-left: 20px !important;
+}
+
+.wims_doc_item {
+    border-left: none !important;
+    border: 0px solid #00000030 !important;
+    
+    outline: 1px solid #00000030;
+    
+    border-radius: 5px;
+    
+    background: var(--color);
+    
+    padding: 0 !important;
+    padding-top: 10px !important;
+}
+
+.wims_doc_item .wims_seq_item_n {
+    display: none;
+}
+
+.wims_doc_item:before {
+    margin-left: 10px;
+}
+
+.wims_doc_item a {
+    font-family: var(--font);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500;
+    
+    padding: 0px 5px !important;
+}
+
+
+.wims_doc_desc {
+    background-color: #fff;
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.wims_doc_desc * {
+    font-family: var(--font);
+    color: #000000;
+    font-weight: 300;
+}
+
+/* Menu */
+
+.menu_title {
+    font-family: var(--font);
+    font-weight: 500;
+    
+    font-size: 12px !important;
+    text-transform: uppercase;
+    
+    margin-top: 10px !important;
+    
+    opacity: 0.2;
+}
+
+.menuitem a {
+    font-family: var(--font);
+    
+    background-position: 5px 50%;
+    padding-left: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
